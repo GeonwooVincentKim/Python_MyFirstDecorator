@@ -1,3 +1,7 @@
+from random import randint
+
+
+
 class Menu:
     def __init__(self, Menu):
         self.FirstMenu = Menu
@@ -40,6 +44,21 @@ def MenuFirst():
     a, b = map(int, input().split())
     Sum = a + b
     print("값은 : {0}입니다.".format(Sum))
+
+    n = randint(1, 100)
+
+    while True:
+        ans = input("Guess my number (Q to exit): ")
+        if ans.upper() == "Q":
+            break
+        ians = int(ans)
+        if n is ians:
+            print("Correct!")
+            SetDefault()
+        elif n > ians:
+            print("Choose higher number")
+        else:
+            print("Choose lower number")
     # return Sum
 
 
@@ -77,5 +96,3 @@ MenuSecond()
 MenuThrid()
 MenuFourth()
 SetDefault()
-
-
